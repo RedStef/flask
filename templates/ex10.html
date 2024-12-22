@@ -1,0 +1,20 @@
+{% extends "index_ex10.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block mainContent %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-8">Tlacitko pro POST metodu</h1>
+    </div>
+</div>
+
+<form class="container" action="{{url_for('postmetoda')}}" method="post">
+    <div class="col-lg-3">
+        <input type="submit" value="postmetoda" class="btn btn-primary">
+    </div>
+</form>
+
+{% endblock %}
+
+

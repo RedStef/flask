@@ -1,0 +1,50 @@
+{% extends "index_calculator.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block mainContent %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-8">Flask kalkulacka</h1>
+        <p class="lead">Zadejte cisla k vypoctu</p>
+    </div>
+</div>
+
+<form class="container" action="{{url_for('calculate')}}" method="post">
+    <div class="row">
+        <div class="col-lg-2-md-3">
+            <input type="number" name="prvni_cislo" class="form-control" placeholder="Prvni cislo" required>
+        </div>
+
+        <div class="col-lg-2">
+            <select id="select_operation" class="form-control" name="operator">
+                <option value="" >Select...</option>
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">x</option>
+                <option value="divide">/</option>
+            </select>
+
+        </div>
+
+        <div class="col-lg-2-md-3">
+            <input type="number" name="druhe_cislo" class="form-control" placeholder="Druhe cislo" required>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <input type="submit" value="calculate" class="btn btn-primary">
+    </div>
+    <div>
+        <div class="row mt-3">
+            <div class="col-lg-1">
+                <div class="text-center">=</div>
+            </div>
+            <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="Vysledek">
+            </div>
+        </div>
+    </div>
+
+</form>
+
+{% endblock %}
